@@ -7,7 +7,7 @@ When a quick, cheap & robust solution is required to process large scale activit
 The solution of leveraging Azure Storage Queue fits into this, having segnificant low costs.
 
 ### Architecture
-
+![High Level Architecture](https://github.com/yodobrin/csv2q/issues/1#issue-444822459)
 #### Function
 
 #### Storage Blob
