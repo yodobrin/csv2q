@@ -24,3 +24,6 @@ the request queue is where all requests for process should arrive to. it is expe
 #### Input Q
 all the lines form the loaded csv would be inserted as seperated messages to the queue
 
+## provided handler
+The provided handler is simple way to utilize the function
+
