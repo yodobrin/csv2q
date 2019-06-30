@@ -29,5 +29,6 @@ The provided handler is simple way to utilize the function
 
 ## Build & Deploy
 Update settings (queue names etc) and then run this from a command line
-func azure functionapp publish <function app name> --build-native-deps
+
+* func azure functionapp publish <function app name> --build-native-deps
 
