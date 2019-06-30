@@ -26,7 +26,7 @@ def createq(queue_service, queue):
     queue_service.create_queue(queue)
 
 def del_blobs(blob_service,container_name,csv_to_load):
-        blob_list=[]
+        # blob_list=[]
         blob_service.delete_blob(container_name,csv_to_load,snapshot=None)
 
     
