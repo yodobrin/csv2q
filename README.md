@@ -27,3 +27,7 @@ all the lines form the loaded csv would be inserted as seperated messages to the
 ## provided handler
 The provided handler is simple way to utilize the function
 
+## Build & Deploy
+Update settings (queue names etc) and then run this from a command line
+func azure functionapp publish <function app name> --build-native-deps
+
