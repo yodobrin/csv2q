@@ -20,7 +20,7 @@ queue_service = QueueService(account_name=sa_name, account_key=sa_key)
 queue_service.encode_function = QueueMessageFormat.text_base64encode
 
 blob_service = BlockBlobService(account_name=sa_name, account_key=sa_key)
-
+messages = []
 for i in range(len(csvfile)):
     target_filename = f'{split_file_prefix}_{filename}.csv'
     target_filepath = os.path.join(dest_folder, target_filename)

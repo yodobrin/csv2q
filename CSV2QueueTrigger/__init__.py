@@ -1,7 +1,7 @@
 import logging
 
 import azure.functions as func
-from azure.storage.queue import QueueService
+from azure.storage.queue import QueueService,QueueMessageFormat
 from azure.storage.blob import BlockBlobService
 import csv
 from io import StringIO
@@ -24,6 +24,10 @@ def createq(queue_service, queue):
     queue_service -- a handle to create and push messages to queues    
     """    
     queue_service.create_queue(queue)
+
+def del_blobs(blob_service,container_name,csv_to_load):
+        blob_list=[]
+        blob_service.delete_blob(container_name,csv_to_load,snapshot=None)
 
     
 
@@ -50,7 +54,7 @@ def main(msg: func.QueueMessage) -> None:
     sa_name = msg_attributes[1]
     sa_key = msg_attributes[2]
     queue_service = QueueService(account_name=sa_name, account_key=sa_key) 
-    
+    queue_service.encode_function = QueueMessageFormat.text_base64encode
     create_queues(queue_service,input_queue,success_queue,fail_queue)  
     
     container_name = msg_attributes[3]
@@ -63,3 +67,4 @@ def main(msg: func.QueueMessage) -> None:
     for row in reader:
         row_line = '\t'.join(row)
         queue_service.put_message(input_queue,row_line)
+    del_blobs(blob_service,container_name,csv_to_load)
