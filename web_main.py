@@ -1,8 +1,8 @@
 from flask import Flask, render_template           
 app = Flask(__name__)             # create an app instance
 
-@app.route("/")                   # at the end point /
-# def hello():                      # call method hello
+@app.route("/")                       # at the end point /
+# def hello():                        # call method hello
 #     return "I like sabich!"         # which returns "hello world"
 def index():
     return render_template("index.html")
