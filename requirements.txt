@@ -6,3 +6,4 @@ protobuf==3.6.1
 six==1.11.0
 azure-storage
 azure-storage-blob
+flask
